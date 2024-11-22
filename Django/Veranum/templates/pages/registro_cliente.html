@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Cliente</title>
+</head>
+<body>
+    <h1>Registro de Cliente</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <label for="telefono">Teléfono:</label>
+        <input type="text" name="telefono" required>
+        <label for="direccion">Dirección:</label>
+        <input type="text" name="direccion" required>
+        <button type="submit">Registrar</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Servicios</title>
+</head>
+<body>
+    <h1>Registro de Servicios</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="nombre">Nombre del Servicio:</label>
+        <input type="text" name="nombre" required>
+        <label for="descripcion">Descripción:</label>
+        <textarea name="descripcion" required></textarea>
+        <label for="precio">Precio:</label>
+        <input type="number" name="precio" required step="0.01">
+        <button type="submit">Registrar Servicio</button>
+    </form>
+</body>
+</html>
