@@ -1,0 +1,147 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .dashboard-container {
+            margin-top: 20px;
+        }
+        .card {
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .card h5 {
+            font-weight: bold;
+        }
+        .btn-custom {
+            background-color: #343a40;
+            color: white;
+        }
+        .btn-custom:hover {
+            background-color: #495057;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+{% include 'base/header.html' %}
+
+<div class="container dashboard-container">
+    <h2 class="text-center">Panel Principal</h2>
+    <div class="row mt-4">
+
+        <!-- Opciones para Administradores -->
+        {% if is_admin %}
+        <div class="col-md-6">
+            <h4 class="mb-3">Funciones para Administradores</h4>
+            <div class="row gy-3">
+                <div class="col-md-6">
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <h5 class="card-title">Registrar Cliente</h5>
+                            <p class="card-text">Gestiona y agrega nuevos clientes al sistema.</p>
+                            <a href="{% url 'registro-cliente' %}" class="btn btn-custom">Ir</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <h5 class="card-title">Registrar Empleado</h5>
+                            <p class="card-text">Agrega nuevos empleados y gestiona su información.</p>
+                            <a href="{% url 'registro-empleado' %}" class="btn btn-custom">Ir</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <h5 class="card-title">Registrar Factura</h5>
+                            <p class="card-text">Administra las facturas emitidas y pendientes.</p>
+                            <a href="{% url 'registro-factura' %}" class="btn btn-custom">Ir</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <h5 class="card-title">Registrar Orden de Pedido</h5>
+                            <p class="card-text">Gestiona las órdenes de pedido de productos.</p>
+                            <a href="{% url 'registro-orden-pedido' %}" class="btn btn-custom">Ir</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <h5 class="card-title">Registrar Proveedor</h5>
+                            <p class="card-text">Administra y registra nuevos proveedores.</p>
+                            <a href="{% url 'registro-proveedor' %}" class="btn btn-custom">Ir</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <h5 class="card-title">Registrar Servicio</h5>
+                            <p class="card-text">Gestiona los servicios ofrecidos por la empresa.</p>
+                            <a href="{% url 'registro-servicio' %}" class="btn btn-custom">Ir</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+
+        <!-- Opciones para Empleados -->
+        {% if is_employee %}
+        <div class="col-md-6">
+            <h4 class="mb-3">Funciones para Empleados</h4>
+            <div class="row gy-3">
+                <div class="col-md-6">
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <h5 class="card-title">Registrar Recepción de Producto</h5>
+                            <p class="card-text">Gestiona la recepción de productos de proveedores.</p>
+                            <a href="{% url 'registro-recepcion-producto' %}" class="btn btn-custom">Ir</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <h5 class="card-title">Registrar Reserva de Hora</h5>
+                            <p class="card-text">Gestiona las reservas de citas y servicios.</p>
+                            <a href="{% url 'registro-reserva-hora' %}" class="btn btn-custom">Ir</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card text-center">
+                        <div class="card-body">
+                            <h5 class="card-title">Registrar Cliente</h5>
+                            <p class="card-text">Agrega nuevos clientes al sistema.</p>
+                            <a href="{% url 'registro-cliente' %}" class="btn btn-custom">Ir</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</div>
+
+{% include 'base/footer.html' %}
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -32,12 +32,12 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'django.contrib.admin',
-    'django.contrib.auth',
+    'django.contrib.auth',  # Asegúrate de que esté aquí
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'Veranum'
+    'Veranum',
 ]
 
 MIDDLEWARE = [
@@ -45,9 +45,15 @@ MIDDLEWARE = [
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',  # Asegúrate de que esté aquí
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+   
+    
+    
+
+
+
 ]
 
 ROOT_URLCONF = 'Django.urls'
@@ -58,7 +64,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'Veranum', 'templates')],
+        'DIRS': [BASE_DIR / "templates"],  # Cambia "templates" si usas otro directorio
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -70,6 +76,7 @@ TEMPLATES = [
         },
     },
 ]
+
 
 WSGI_APPLICATION = 'Django.wsgi.application'
 
@@ -132,11 +139,11 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 # LOGIN_URL
-LOGIN_URL = "login"
+LOGIN_URL = "inicio"
 
 # LOGIN_REDIRECT_URL
-LOGIN_REDIRECT_URL = "crud"
+LOGIN_REDIRECT_URL = '/Veranum/dashboard/'  # Ajusta esta URL según tu lógica
+LOGOUT_REDIRECT_URL = '/Veranum/inicio/'
 
-# LOGOUT_REDIRECT_URL
-LOGOUT_REDIRECT_URL = "index"
+
 

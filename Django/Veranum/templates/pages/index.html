@@ -124,7 +124,7 @@
         <H1>Trabajamos las mejores marcas</H1>
           <div> 
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjn8bswlcdhMgohDWZEYXey8CmOQ_QvpI7zQ&s"class="img1" alt="" height="180">
-          </div><
+          </div>
           <div>
             <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/BMW.svg/768px-BMW.svg.png" class="img2" height="180">
           </div>
@@ -162,49 +162,49 @@
 
 
 
-    <div class="d-flex flex-column h-100">
-
-      <div class="container text-center section-container">
-        <div class="row">
-            <div class="col-md-6">
-                <img src="https://www.autoavance.co/wp-content/uploads/2021/10/taller-mecanico-productividad.jpeg" alt="Imagen de ubicación privilegiada">
+      <div class="container text-center section-container my-5">
+        <div class="row align-items-center">
+            <!-- Primer bloque: Somos más que un taller -->
+            <div class="col-md-4">
+                <img src="https://www.autoavance.co/wp-content/uploads/2021/10/taller-mecanico-productividad.jpeg" alt="Imagen de ubicación privilegiada" class="img-fluid rounded">
+                <h2 class="mt-3">Somos más que un taller</h2>
+                <p>Somos una empresa nueva en el mercado pero somos expertos en la mantención y cuidado de vehículos. Tenemos un staff de técnicos especializados que siempre entregarán la opción más adecuada según sus necesidades y requerimientos.</p>
             </div>
-            <div class="col-md-6 section-content">
-                <h2>Somos más que un taller, somos la solución que necesitas</h2>
-                <p>Somos una empresa nueva en el mercado pero somos expertos en la mantención y cuidado de vehículosS 
-                  Tenemos un staff de técnicos especializados que siempre entregarán la opción más adecuada según sus necesidades y requerimientos.</p>
-                
+    
+            <!-- Segundo bloque: Misión -->
+            <div class="col-md-4">
+                <h2>Nuestra misión</h2>
+                <p>Asegurar que nuestros clientes puedan conducir sus vehículos con seguridad, mediante un correcto mantenimiento preventivo y correctivo que le brindamos a su automóvil, haciendo sentir a cada cliente tranquilidad cuando el conduce su vehículo.</p>
+                <img src="https://www.nubecar.com/data/ficheros/N000001/2023/11/Tech_2_Hi.jpg" alt="Imagen de misión" class="img-fluid rounded mt-3">
+            </div>
+    
+            <!-- Tercer bloque: Visión -->
+            <div class="col-md-4">
+                <img src="https://mycaready.com/wp-content/uploads/2021/10/diag.jpg" alt="Imagen de visión" class="img-fluid rounded">
+                <h2 class="mt-3">Nuestra visión</h2>
+                <p>Ser una empresa referente y líder en el mercado de los servicios automotriz manteniendo altos estándares de calidad con equipamiento de última tecnología además de insumos de primera calidad.</p>
             </div>
         </div>
     </div>
-
-    <div class="container text-center section-container my-5">
-      <div class="row">
-          <!-- Columna para la misión -->
-          <div class="col-md-6 section-content">
-              <h2>Nuestra misión</h2>
-              <p>Asegurar que nuestros clientes puedan conducir sus vehículos con seguridad, mediante un correcto mantenimiento preventivo y correctivo que le brindamos a su automóvil, haciendo sentir a cada cliente tranquilidad cuando el conduce su vehículo.</p>
-          </div>
-          <!-- Columna para la imagen de misión -->
-          <div class="col-md-6">
-              <img src="https://www.nubecar.com/data/ficheros/N000001/2023/11/Tech_2_Hi.jpg" alt="Imagen de actividades al aire libre" class="img-fluid">
-          </div>
-      </div>
-  </div>
+    <style>
+      .section-container {
+          background-color: #f8f9fa; /* Fondo claro */
+          padding: 20px;
+          border-radius: 10px;
+      }
+      .img-fluid {
+          max-height: 200px; /* Ajusta la altura de las imágenes */
+          object-fit: cover;
+      }
+      h2 {
+          font-size: 1.5rem;
+          margin-top: 10px;
+      }
+      p {
+          font-size: 0.9rem;
+      }
+  </style>
   
-  <div class="container text-center section-container my-5">
-      <div class="row">
-          <!-- Columna para la imagen de visión -->
-          <div class="col-md-6">
-              <img src="https://mycaready.com/wp-content/uploads/2021/10/diag.jpg" alt="Imagen de ubicación privilegiada" class="img-fluid">
-          </div>
-          <!-- Columna para la visión -->
-          <div class="col-md-6 section-content">
-              <h2>Nuestra visión</h2>
-              <p>Ser una empresa referente y líder en el mercado de los servicios automotriz manteniendo altos estándares de calidad con equipamiento de última tecnología además de insumos de primera calidad.</p>
-          </div>
-      </div>
-  </div>
   
   
 
@@ -224,163 +224,6 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     
-<!--Modal Reservas-->
-
-<div
-class="modal fade"
-id="modalReseraaaav"
-tabindex="-1"
-aria-labelledby="exampleModalLabel"
-aria-hidden="true"
->
-<div class="modal-dialog">
-  <div class="modal-content">
-    <div class="modal-header">
-      <h1 class="modal-title fs-5" id="exampleModalLabel">Reservar</h1>
-      <button
-        type="button"
-        class="btn-close"
-        data-bs-dismiss="modal"
-        aria-label="Cerrar"
-      ></button>
-    </div>
-    <div class="modal-body">
-      <div class="container">
-        <div class="row">
-          <h2 class="my-3">Datos para la reserva</h2>
-          <form action="{% url 'habitaciones' %}" method="POST">
-            {% csrf_token %}
-            <div class="form-floating mb-3 w-100">
-              <input
-                type="text"
-                value="{{reserva.rut}}"
-                class="form-control"
-                id="rut"
-                name="rut"
-              />
-              <label for="rut" class="form-label">Ingrese su Rut:</label>
-            </div>
-            <div class="form-floating mb-3 w-100">
-              <input
-                type="text"
-                value="{{reserva.nombre}}"
-                class="form-control"
-                id="nombre"
-                name="nombre"
-              />
-              <label for="nombre" class="form-label"
-                >Ingrese su nombre:</label
-              >
-            </div>
-            <div class="form-floating mb-3 w-100">
-              <input
-                type="text"
-                value="{{reserva.apellido_paterno}}"
-                class="form-control"
-                id="appPaterno"
-                name="appPaterno"
-              />
-              <label for="appPaterno" class="form-label"
-                >Ingrese su Apellido Paterno:</label
-              >
-            </div>
-            <div class="form-floating mb-3 w-100">
-              <input
-                type="text"
-                value="{{reserva.apellido_materno}}"
-                class="form-control"
-                id="appMaterno"
-                name="appMaterno"
-              />
-              <label for="appMaterno" class="form-label"
-                >Ingrese su Apellido Materno:</label
-              >
-            </div>
-            <div class="form-floating mb-3 w-100">
-              <input
-                type="number"
-                value="{{reserva.numero_visitantes}}"
-                class="form-control"
-                id="numVisitantes"
-                name="numVisitantes"
-              />
-              <label for="appMaterno" class="form-label"
-                >Ingrese cantidad de huéspedes:</label
-              >
-            </div>
-
-            <div class="form-floating mb-3 w-100">
-              <input type="date"
-              value="{{reserva.fecha_entrada|date:"Y-m-d"}}"
-              class="form-control" id="fechaEntrada" name="fechaEntrada">
-              <label for="fecha" class="form-label"
-                >Fecha de entrada:</label
-              >
-            </div>
-            <div class="form-floating mb-3 w-100">
-              <input type="date"
-              value="{{reserva.fecha_salida|date:"Y-m-d"}}"
-              class="form-control" id="fechaSalida" name="fechaSalida">
-              <label for="fechaSalida" class="form-label"
-                >Fecha de salida:</label
-              >
-            </div>
-            <div class="form-floating mb-3 w-100">
-              <input
-                type="email"
-                value="{{reserva.email}}"
-                class="form-control"
-                id="email"
-                name="email"
-              />
-              <label for="correo" class="form-label"
-                >Ingrese su Correo:</label
-              >
-            </div>
-            <div class="form-floating mb-3 w-100">
-              <input
-                type="text"
-                value="{{reserva.telefono}}"
-                class="form-control"
-                id="telefono"
-                name="telefono"
-              />
-              <label for="telefono" class="form-label">Teléfono:</label>
-            </div>
-            <div class="form-group col-md-6">
-              <label for="id_habitacion">Nombre de Habitación</label>
-              <select
-                class="form-control"
-                id="id_habitacion"
-                name="id_habitacion"
-                required
-              >
-                <option value="">Seleccione una opción</option>
-                {% for habitacion in habitaciones %}
-                <option value="{{ habitacion.id_habitacion }}">
-                  {{ habitacion.habitacion }}
-                </option>
-                {% endfor %}
-              </select>
-            </div>
-
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-bs-dismiss="modal"
-            >
-              Cerrar
-            </button>
-            <button type="submit" class="btn btn-primary">
-              Finalizar Reserva
-            </button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
 
 -------------------------------------
 
