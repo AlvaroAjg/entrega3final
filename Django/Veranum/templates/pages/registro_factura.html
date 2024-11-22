@@ -1,10 +1,15 @@
+<<<<<<< HEAD
 {% load static %}
 
 <!doctype html>
+=======
+<!DOCTYPE html>
+>>>>>>> 1af8711c33b929ad57d7f3c3cfd5889feed10d7b
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
     <title>Registro de Factura</title>
 
     <!-- Bootstrap CSS -->
@@ -41,5 +46,23 @@
 
 <!-- Bootstrap JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+=======
+    <title>Registro de Factura/Boleta</title>
+</head>
+<body>
+    <h1>Registro de Factura/Boleta</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="cliente">Cliente:</label>
+        <select name="cliente" required>
+            {% for cliente in clientes %}
+                <option value="{{ cliente.id }}">{{ cliente.user.username }}</option>
+            {% endfor %}
+        </select>
+        <label for="total">Total:</label>
+        <input type="number" name="total" required step="0.01">
+        <button type="submit">Registrar Factura</button>
+    </form>
+>>>>>>> 1af8711c33b929ad57d7f3c3cfd5889feed10d7b
 </body>
 </html>
